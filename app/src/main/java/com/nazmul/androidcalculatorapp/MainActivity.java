@@ -12,14 +12,19 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
 
-    TextView txt_result;
-    EditText first_number,second_number;
+    TextView txtResult;
+    EditText firstNumber,secondNumber;
 
     Button btnSum,btnSub,btnMul,btnDiv,btnRute,btnModulus,btnClear,btnSquire;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        txtResult = findViewById(R.id.txt_result);
+        firstNumber = findViewById(R.id.first_number);
+        secondNumber = findViewById(R.id.second_number);
+
         btnSum = findViewById(R.id.btn_sum);
         btnSub = findViewById(R.id.btn_sub);
         btnMul = findViewById(R.id.btn_mul);
@@ -33,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         btnSum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String value1 = first_number.getText().toString();
-                String value2 = second_number.getText().toString();
+                String value1 = firstNumber.getText().toString();
+                String value2 = secondNumber.getText().toString();
                 if (value1.isEmpty() && value2.isEmpty()){
                     Toast.makeText(MainActivity.this,"Insert value",Toast.LENGTH_LONG);
                 }
@@ -42,17 +47,65 @@ public class MainActivity extends AppCompatActivity {
                     double number1 = Double.parseDouble(value1);
                     double number2 = Double.parseDouble(value2);
                     double result = number1+number2;
-                    txt_result.setText(""+result);
+                    txtResult.setText(""+result);
                 }
 
             }
         });
-        btnSum.setOnClickListener(new View.OnClickListener() {
+
+        btnSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String value1 = firstNumber.getText().toString();
+                String value2 = secondNumber.getText().toString();
+                if (value1.isEmpty() && value2.isEmpty()){
+                    Toast.makeText(MainActivity.this,"Insert value",Toast.LENGTH_LONG);
+                }
+                else {
+                    double number1 = Double.parseDouble(value1);
+                    double number2 = Double.parseDouble(value2);
+                    double result = number1-number2;
+                    txtResult.setText(""+result);
+                }
 
             }
         });
+
+        btnMul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String value1 = firstNumber.getText().toString();
+                String value2 = secondNumber.getText().toString();
+                if (value1.isEmpty() && value2.isEmpty()){
+                    Toast.makeText(MainActivity.this,"Insert value",Toast.LENGTH_LONG);
+                }
+                else {
+                    double number1 = Double.parseDouble(value1);
+                    double number2 = Double.parseDouble(value2);
+                    double result = number1*number2;
+                    txtResult.setText(""+result);
+                }
+
+            }
+        });
+        btnDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String value1 = firstNumber.getText().toString();
+                String value2 = secondNumber.getText().toString();
+                if (value1.isEmpty() && value2.isEmpty()){
+                    Toast.makeText(MainActivity.this,"Insert value",Toast.LENGTH_LONG);
+                }
+                else {
+                    double number1 = Double.parseDouble(value1);
+                    double number2 = Double.parseDouble(value2);
+                    double result = number1/number2;
+                    txtResult.setText(""+result);
+                }
+
+            }
+        });
+
 
 
 
