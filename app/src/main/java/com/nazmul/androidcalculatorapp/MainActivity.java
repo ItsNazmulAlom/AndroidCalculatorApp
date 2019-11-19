@@ -140,7 +140,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+       btnClear.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               txtResult.setText("0");
+               firstNumber.setText("");
+               secondNumber.setText("");
+               
+           }
+       });
 
 
     }
