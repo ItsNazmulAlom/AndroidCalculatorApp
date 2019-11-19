@@ -140,13 +140,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnModulus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String value1 = firstNumber.getText().toString();
+                String value2 = secondNumber.getText().toString();
+                if (value1.isEmpty() && value2.isEmpty()){
+                    Toast.makeText(MainActivity.this,"Insert value",Toast.LENGTH_LONG);
+                }
+                else {
+                    int number1 = Integer.parseInt(value1);
+                    int number2 = Integer.parseInt(value2);
+                    int result = number1%number2;
+                    txtResult.setText(""+result);
+                }
+
+            }
+        });
+
        btnClear.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
                txtResult.setText("0");
                firstNumber.setText("");
                secondNumber.setText("");
-               
+
            }
        });
 
