@@ -106,7 +106,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnSquire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String value1 = firstNumber.getText().toString();
+                String value2 = secondNumber.getText().toString();
+                if (value1.isEmpty() && value2.isEmpty()){
+                    Toast.makeText(MainActivity.this,"Insert value",Toast.LENGTH_LONG);
+                }
+                else {
+                    double number1 = Double.parseDouble(value1);
+                    double number2 = Double.parseDouble(value2);
+                    double result =   Math.pow(number1,number2);
+                    txtResult.setText(""+result);
+                }
 
+            }
+        });
 
 
     }
